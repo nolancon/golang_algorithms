@@ -27,7 +27,11 @@ func TestQuickSort(t *testing.T) {
 			unsorted: []int{1, 1, 1, 0, 0, 0, 0},
 			sorted: []int{0, 0, 0, 0, 1, 1, 1},
 		},
-
+		{
+			name: "test 4",
+			unsorted: []int{-34, 26, 134, 58, 45, -77, -33, 17, 1, 0},
+			sorted: []int{-77, -34, -33, 0, 1, 17, 26, 45, 58, 134},
+		},
 	}
 	for _, tc := range tcases {
 		sorted := QuickSort(tc.unsorted)
