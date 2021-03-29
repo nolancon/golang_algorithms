@@ -1,10 +1,12 @@
 package list
 
 type List interface {
-	InsertFront(int)
+	InsertFront(interface{})
 	//	InsertBack(int)
 	RemoveFront()
 	//	RemoveBack()
 	Traverse()
 	Size() int
+	GetHead() interface{}
+	GetTail() interface{}
 }

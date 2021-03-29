@@ -6,22 +6,24 @@ import (
 
 type DoublyLinkedList struct {
 	head   *Node
+	tail   *Node
 	length int
 }
 
 type Node struct {
-	data     int
+	data     interface{}
 	next     *Node
 	previous *Node
 }
 
-func (dl *DoublyLinkedList) InsertFront(nodeData int) {
+func (dl *DoublyLinkedList) InsertFront(nodeData interface{}) {
 	fmt.Printf("inserting %v to front of list...\n", nodeData)
 	n := &Node{
 		data: nodeData,
 	}
 	if dl.head == nil {
 		dl.head = n
+		dl.tail = n
 	} else {
 		n.next = dl.head
 		dl.head = n
@@ -66,6 +68,15 @@ func (dl *DoublyLinkedList) Traverse() {
 		currentNode = currentNode.next
 	}
 }
+
 func (dl *DoublyLinkedList) Size() int {
 	return dl.length
+}
+
+func (dl *DoublyLinkedList) GetHead() interface{} {
+	return dl.head.data
+}
+
+func (dl *DoublyLinkedList) GetTail() interface{} {
+	return dl.tail.data
 }

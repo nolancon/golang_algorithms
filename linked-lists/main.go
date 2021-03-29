@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"github.com/nolancon/golang_algorithms/linked-lists/circular"
 	"github.com/nolancon/golang_algorithms/linked-lists/double"
 	"github.com/nolancon/golang_algorithms/linked-lists/list"
 	"github.com/nolancon/golang_algorithms/linked-lists/single"
@@ -44,5 +45,23 @@ func main() {
 
 	doubleList.RemoveFront()
 	doubleList.Traverse()
+
+	fmt.Println("\n************\nCircularly Linked Lists...\n************\n")
+	var circularList list.List = &circular.CircularlyLinkedList{}
+
+	circularList.InsertFront("cat")
+	circularList.Traverse()
+
+	circularList.InsertFront("dog")
+	circularList.Traverse()
+
+	circularList.InsertFront("rabbit")
+	circularList.Traverse()
+
+	circularList.RemoveFront()
+	circularList.Traverse()
+
+	circularList.RemoveFront()
+	circularList.Traverse()
 
 }
